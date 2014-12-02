@@ -1,12 +1,11 @@
 {
-	"name": "angular-bespoke",
-	"version": "1.0.0",
+	"name": "angular-bespoke-demo",
+	"version": "0.0.0",
 	"authors": [
 		"Han Seungho <han@hansh.kr>"
 	],
-	"description": "AngularJS bespoke.js directive",
+	"description": "Demo",
 	"keywords": [
-		"angular-bespoke"
 	],
 	"license": "MIT",
 	"ignore": [
@@ -20,7 +19,8 @@
 		"angular":"~1.2.0",
 		"angular-animate":"~1.2.0",
 		"angular-sanitize":"~1.2.0",
-		"angular-touch":"~1.2.0"
+		"angular-touch":"~1.2.0",
+		"angular-route":"~1.2.0"
 	},
 	"devDependencies": {
 	}
