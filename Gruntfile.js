@@ -35,9 +35,17 @@ module.exports = function(grunt) {
 		*/
 		grunt.initConfig({
 			concat: {
-				devCss: {
-					src:    [],
-					dest:   []
+				devJs: {
+					src: [
+						"bower_components/bespoke.js/dist/bespoke.js",
+						"bower_components/bespoke-classes/dist/bespoke-classes.js",
+						"bower_components/bespoke-keys/dist/bespoke-keys.js",
+						"bower_components/bespoke-scale/dist/bespoke-scale.js",
+						"bower_components/bespoke-progress/dist/bespoke-progress.js",
+						"bower_components/bespoke-theme-cube/dist/bespoke-theme-cube.js",
+						'src/angular-bespoke.js'
+					],
+					dest: 'dist/angular-bespoke.js'
 				}
 			},
 			jshint: {
@@ -84,8 +92,8 @@ module.exports = function(grunt) {
 				},
 				build: {
 					files:  {},
-					src:    'bespoke.js',
-					dest:   'bespoke.min.js'
+					src: 'dist/angular-bespoke.js',
+					dest: 'dist/angular-bespoke.min.js'
 				}
 			},
 			less: {
@@ -93,15 +101,14 @@ module.exports = function(grunt) {
 					options: {
 					},
 					files: {
-						"main.css": "_base.less",
-						"bespoke.css": "_bespoke.less"
+						"dist/angular-bespoke.css": "src/angular-bespoke.less"
 					}
 				}
 			},
 			cssmin: {
 				dev: {
-					src: ['bespoke.css'],
-					dest: 'bespoke.min.css'
+					src: ['dist/angular-bespoke.css'],
+					dest: 'dist/angular-bespoke.min.css'
 				}
 			}/*,
 			karma: {
@@ -112,16 +119,16 @@ module.exports = function(grunt) {
 				}
 			}*/
 		});
-		
-		
+
+
 		/**
 		register/define grunt tasks
 		@toc 6.
 		*/
 		// Default task(s).
 		// grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss']);
-		grunt.registerTask('default', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'uglify:build']);
-	
+		grunt.registerTask('default', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'concat', 'uglify:build']);
+
 	}
 	init({});		//initialize here for defaults (init may be called again later within a task)
 

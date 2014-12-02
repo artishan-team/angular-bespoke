@@ -1,7 +1,7 @@
 {
-	"author": "",
-	"name": "angular-bespoke-demo",
-	"version": "0.0.0",
+	"author": "Han Seungho <han@hansh.kr>",
+	"name": "angular-bespoke",
+	"version": "0.1.0",
 	"description": "",
 	"homepage": "",
 	"dependencies": {
@@ -16,10 +16,11 @@
 		"grunt-contrib-jshint": "~0.7.0",
 		"grunt-karma": "~0.6.2"
 	},
+	"main": "./dist/angular-bespoke.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"repository": "",
+	"repository": "https://github.com/artishan/angular-bespoke.git",
 	"engines":{
 		"node":"0.10.10"
 	}

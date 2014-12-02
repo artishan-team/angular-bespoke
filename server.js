@@ -9,6 +9,7 @@ var port =3000;
 var host ='localhost';
 var serverPath ='/';
 var staticPath ='/';
+var examplePath ='demo/';
 
 var staticFilePath = __dirname + serverPath;
 // remove trailing slash if present
@@ -20,13 +21,15 @@ app.configure(function(){
 	// compress static content
 	app.use(express.compress());
 	app.use(serverPath, express.static(staticFilePath));		//serve static files
-	
 	app.use(express.bodyParser());		//for post content / files - not sure if this is actually necessary?
 });
 
-//catch all route to serve index.html (main frontend app)
-app.get('*', function(req, res){
-	res.sendfile(staticFilePath + staticPath+ 'index.html');
+app.get('/dev', function(req, res){
+	res.sendfile(staticFilePath + staticPath + examplePath + 'dev.html');
+});
+
+app.get('/', function(req, res){
+	res.sendfile(staticFilePath + staticPath + examplePath + 'index.html');
 });
 
 app.listen(port);

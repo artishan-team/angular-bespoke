@@ -22,10 +22,10 @@ TODO
 
 'use strict';
 
-angular.module('artishan.angular-bespoke', []).directive('artishanBespoke', [ function () {
+angular.module('artishan.bespoke', []).directive('bespoke', [ function () {
 
 	return {
-		restrict: 'A',
+		restrict: 'AE',
 		scope: {
 		},
 
@@ -38,16 +38,31 @@ angular.module('artishan.angular-bespoke', []).directive('artishanBespoke', [ fu
 					attrs[xx] =defaultsAttrs[xx];
 				}
 			}
-			
-			var html ="<div>";
-			html+="</div>";
+			console.log(element);
+			var html = "<section>Slide 1</section>";
+					html += "<section>Slide 2</section>";
+					html += "<section>Slide 3</section>";
+			// var html = "<article id='presentation'>";
+			// 		html += "<section>Slide 1</section>";
+			// 		html += "<section>Slide 2</section>";
+			// 		html += "<section>Slide 3</section>";
+			// 		html += "</article>";
+			console.log(html);
 			return html;
 		},
-		
+
 		link: function(scope, element, attrs) {
+
 		},
-		
+
 		controller: function($scope, $element, $attrs) {
+			var deck = bespoke.from($element[0], [
+				bespoke.themes.cube(),
+				bespoke.plugins.classes(),
+  			bespoke.plugins.keys(),
+				bespoke.plugins.scale(),
+				bespoke.plugins.progress()
+			]);
 		}
 	};
 }]);
