@@ -32,4 +32,11 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', function($rou
 
 	$routeProvider.otherwise({redirectTo: appPathRoute+'home'});
 
+}])
+.controller('DemoController', ['$scope', function($scope) {
+	$scope.data = [
+		"<h1>slide1</h1>",
+		"<h2>slide2</h2>",
+		"<h3>slide3</h3>"
+	];
 }]);
