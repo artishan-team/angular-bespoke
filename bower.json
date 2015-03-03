@@ -6,7 +6,7 @@
   ],
   "main": "./dist/angular-bespoke.js",
   "description": "AngularJs bespoke.js",
-  "keywords": ['angular', 'slide', 'bespoke'],
+  "keywords": ["angular", "bespoke"],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -22,6 +22,5 @@
     "bespoke-scale": "~1.0.1",
     "bespoke-progress": "~1.0.0",
     "bespoke-theme-nebula": "~1.0.1"
-  },
-  "devDependencies": {}
+  }
 }
