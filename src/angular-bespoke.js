@@ -23,19 +23,18 @@ TODO
 'use strict';
 
 angular.module('artishan.bespoke', []).directive('bespoke', [ function () {
-
 	return {
 		restrict: 'AE',
 		scope: {
 			bespokeSlides: '=slides',
 		},
-    link: function(scope, elem, attrs) {
+		link: function(scope, elem) {
 			var slides = scope.bespokeSlides;
-      if(slides !== undefined){
-        angular.forEach(slides, function(slide){
-          var section = angular.element("<section>" + slide + "<section>");
-          elem.append(section);
-        });
+			if(slides !== undefined){
+				angular.forEach(slides, function(slide){
+					var section = angular.element("<section>" + slide + "<section>");
+					elem.append(section);
+				});
 				bespoke.from(elem[0], [
 					bespoke.themes.cube(),
 					bespoke.plugins.classes(),
@@ -43,7 +42,7 @@ angular.module('artishan.bespoke', []).directive('bespoke', [ function () {
 					bespoke.plugins.scale(),
 					bespoke.plugins.progress()
 				]);
-      }
-    }
+			}
+		}
 	};
 }]);

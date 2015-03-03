@@ -22,7 +22,6 @@
     "_": false,
     "app": false,
     "angular": false,
-    "d3": false,
-    "moment": false
+    "bespoke": false
   }
 }

@@ -1,27 +1,28 @@
 {
-	"author": "Han Seungho <han@hansh.kr>",
-	"name": "angular-bespoke",
-	"version": "0.1.0",
-	"description": "",
-	"homepage": "",
-	"dependencies": {
-	},
-	"devDependencies": {
-		"express":"~3.4.4",
-		"grunt": "~0.4.1",
-		"grunt-contrib-concat": "~0.3.0",
-		"grunt-contrib-less": "~0.8.1",
-		"grunt-contrib-uglify": "~0.2.5",
-		"grunt-contrib-cssmin": "~0.7.0",
-		"grunt-contrib-jshint": "~0.7.0",
-		"grunt-karma": "~0.6.2"
-	},
-	"main": "./dist/angular-bespoke.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": "https://github.com/artishan/angular-bespoke.git",
-	"engines":{
-		"node":"0.10.10"
-	}
+  "author": "Han Seungho <han@hansh.kr>",
+  "name": "angular-bespoke",
+  "version": "0.1.0",
+  "description": "",
+  "homepage": "",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "~3.4.4",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-karma": "~0.6.2",
+    "lodash": "^3.3.1"
+  },
+  "main": "./dist/angular-bespoke.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/artishan/angular-bespoke.git",
+  "engines": {
+    "node": "0.10.10"
+  }
 }

@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 	@toc 2.
 	*/
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -43,6 +44,7 @@ module.exports = function(grunt) {
 						"bower_components/bespoke-scale/dist/bespoke-scale.js",
 						"bower_components/bespoke-progress/dist/bespoke-progress.js",
 						"bower_components/bespoke-theme-cube/dist/bespoke-theme-cube.js",
+						// "bower_components/bespoke-theme-nebula/dist/bespoke-theme-nebula.js",
 						'src/angular-bespoke.js'
 					],
 					dest: 'dist/angular-bespoke.js'
@@ -110,7 +112,24 @@ module.exports = function(grunt) {
 					src: ['dist/angular-bespoke.css'],
 					dest: 'dist/angular-bespoke.min.css'
 				}
-			}/*,
+			},
+			connect: {
+				dev: {
+					options: {
+						port: 8000,
+						hostname: '*',
+						base: ['demo', 'src', 'bower_components']
+					}
+				},
+				demo: {
+					options: {
+						port: 8000,
+						hostname: '*',
+						base: ['demo', 'dist', 'bower_components']
+					}
+				}
+			}
+			/*,
 			karma: {
 				unit: {
 					configFile: publicPathRelativeRoot+'config/karma.conf.js',
@@ -125,9 +144,10 @@ module.exports = function(grunt) {
 		register/define grunt tasks
 		@toc 6.
 		*/
-		// Default task(s).
-		// grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss']);
-		grunt.registerTask('default', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'concat', 'uglify:build']);
+		grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss', 'connect:dev:keepalive']);
+		grunt.registerTask('dev', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss', 'connect:dev:keepalive']);
+		grunt.registerTask('demo', ['connect:demo:keepalive']);
+		grunt.registerTask('build', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'concat', 'uglify:build']);
 
 	}
 	init({});		//initialize here for defaults (init may be called again later within a task)

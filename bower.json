@@ -1,32 +1,27 @@
 {
   "name": "angular-bespoke",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "Han Seungho <han@hansh.kr>"
   ],
   "main": "./dist/angular-bespoke.js",
   "description": "AngularJs bespoke.js",
-  "keywords": [],
+  "keywords": ['angular', 'slide', 'bespoke'],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
-  "dependencies": {
+  "devDependencies": {
     "angular": "~1.2.0",
-    "angular-animate": "~1.2.0",
-    "angular-sanitize": "~1.2.0",
-    "angular-touch": "~1.2.0",
-    "angular-route": "~1.2.0",
     "bespoke.js": "~1.0.0",
     "bespoke-theme-cube": "~2.0.0",
     "bespoke-keys": "~1.0.0",
     "bespoke-classes": "~1.0.0",
     "bespoke-scale": "~1.0.1",
-    "bespoke-progress": "~1.0.0"
+    "bespoke-progress": "~1.0.0",
+    "bespoke-theme-nebula": "~1.0.1"
   },
   "devDependencies": {}
 }
