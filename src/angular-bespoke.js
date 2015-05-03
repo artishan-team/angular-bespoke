@@ -22,27 +22,29 @@ TODO
 
 'use strict';
 
-angular.module('artishan.bespoke', []).directive('bespoke', [ function () {
+angular.module('artishan.bespoke', [])
+.directive('bespoke', [ function () {
 	return {
 		restrict: 'AE',
 		scope: {
-			bespokeSlides: '=slides',
+			slides: '=',
 		},
-		link: function(scope, elem) {
-			var slides = scope.bespokeSlides;
-			if(slides !== undefined){
-				angular.forEach(slides, function(slide){
-					var section = angular.element("<section>" + slide + "<section>");
-					elem.append(section);
-				});
-				bespoke.from(elem[0], [
-					bespoke.themes.cube(),
-					bespoke.plugins.classes(),
-					bespoke.plugins.keys(),
-					bespoke.plugins.scale(),
-					bespoke.plugins.progress()
-				]);
-			}
+		link: function(scope, elem, attrs) {
+      scope.$watch('slides', function(newVal) {
+				if(angular.isArray(newVal)){
+					angular.forEach(newVal, function(slide){
+						var section = angular.element("<section>" + slide + "<section>");
+						elem.append(section);
+					});
+					bespoke.from(elem[0], [
+						bespoke.themes.cube(),
+						bespoke.plugins.classes(),
+						bespoke.plugins.keys(),
+						bespoke.plugins.scale(),
+						bespoke.plugins.progress()
+					]);
+				}
+      });
 		}
 	};
 }]);

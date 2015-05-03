@@ -52,18 +52,15 @@ module.exports = function(grunt) {
 			},
 			jshint: {
 				options: {
-					//force:          true,
 					globalstrict:   true,
-					//sub:            true,
 					node: true,
 					loopfunc: true,
 					browser:        true,
 					devel:          true,
 					globals: {
-						angular:    false,
-						$:          false,
-						moment:		false,
-						Pikaday: false,
+						angular: false,
+						$: false,
+						moment:	false,
 						module: false,
 						forge: false
 					}
@@ -118,7 +115,7 @@ module.exports = function(grunt) {
 					options: {
 						port: 8000,
 						hostname: '*',
-						base: ['demo', 'src', 'bower_components']
+						base: ['test', 'src', 'bower_components', 'node_modules']
 					}
 				},
 				demo: {
@@ -144,11 +141,28 @@ module.exports = function(grunt) {
 		register/define grunt tasks
 		@toc 6.
 		*/
-		grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss', 'connect:dev:keepalive']);
-		grunt.registerTask('dev', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss', 'connect:dev:keepalive']);
-		grunt.registerTask('demo', ['connect:demo:keepalive']);
-		grunt.registerTask('build', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'concat', 'uglify:build']);
-
+		grunt.registerTask('default', [
+			'jshint:beforeconcat',
+			'less:development',
+			'concat:devJs',
+			'connect:demo:keepalive'
+		]);
+		grunt.registerTask('dev', [
+			'jshint:beforeconcat',
+			'less:development',
+			'concat:devJs',
+			'connect:dev:keepalive'
+		]);
+		grunt.registerTask('demo', [
+			'connect:demo:keepalive'
+		]);
+		grunt.registerTask('build',	[
+			'jshint:beforeconcatQ',
+			'less:development',
+			'cssmin',
+			'concat',
+			'uglify:build'
+		]);
 	}
 	init({});		//initialize here for defaults (init may be called again later within a task)
 

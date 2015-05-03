@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "description": "",
   "homepage": "",
-  "dependencies": {},
   "devDependencies": {
     "express": "~3.4.4",
     "grunt": "~0.4.1",
