@@ -40,7 +40,7 @@ $scope.data = [
 ];
 ```
 
-### Markdown
+### Markdup
 ```html
 <bespoke slides="data"></bespoke>
 ```
